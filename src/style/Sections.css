@@ -1,0 +1,8 @@
+.g-section{
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.g-section.g-section--header{
+    height: calc(100dvh - var(--header-heith));
+}
