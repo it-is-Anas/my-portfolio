@@ -1,0 +1,28 @@
+
+
+.g-button{
+    padding: .4em  ;
+    font-weight: 700;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    background: var(--green-yellow);
+    color: var(--white);
+    margin: 1em 0;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+
+.demo-section-text-col_text-btn{
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+
+@media (max-width: 767px) {
+
+    .demo-section-text-col_text-btn{
+        margin-right:  auto;
+    }
+}

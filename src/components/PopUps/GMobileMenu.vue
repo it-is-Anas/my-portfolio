@@ -41,8 +41,10 @@
         },methods:{
             open(){
                 this.on = true;
+                document.querySelector('body').style.overflowY = 'hidden';
             },close(){
                 this.on = false;
+                document.querySelector('body').style.overflowY = 'auto';
             }
         }
     }

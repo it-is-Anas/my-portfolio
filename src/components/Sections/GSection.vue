@@ -1,6 +1,6 @@
 <template>
-    <div class="g-section" :class="{'g-section--header': withHeader}">
-        <div class="g-controller">
+    <div class="g-section"  :class="[withHeader?'g-section--header':'']">
+        <div class="g-controller" :class="[...controllerCls]" >
             <slot name="default">
                 
             </slot>
@@ -13,6 +13,9 @@ export default {
         withHeader: {
             default: false,
             type: Boolean,
+        },controllerCls:{
+            default: [],
+            type: Array
         }
     }
 }

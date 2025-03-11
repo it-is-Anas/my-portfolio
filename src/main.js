@@ -10,4 +10,6 @@ import './style/logo.css';
 import './style/HeadersStyles.css';
 import './style/PopUpsStyles.css';
 import './style/Sections.css';
+import './style/Buttons.css';
+import './style/HeadLine.css';
 createApp(App).use(store).use(router).mount('#app')

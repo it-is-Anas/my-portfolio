@@ -62,11 +62,17 @@ body{
     }
 }
 @media (max-width: 767px) {
+    body{
+        font-size: 13px;
+    }
     .g-controller{
         width: 550px;
     }
 }
 @media (max-width: 550px) {
+    body{
+        font-size: 12px;
+    }
     .g-controller{
         width: 94%;
     }
