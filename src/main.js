@@ -12,4 +12,7 @@ import './style/PopUpsStyles.css';
 import './style/Sections.css';
 import './style/Buttons.css';
 import './style/HeadLine.css';
+import './style/GSkill.css';
+import './style/GServices.css';
+import './style/GProjects.css';
 createApp(App).use(store).use(router).mount('#app')

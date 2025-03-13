@@ -51,14 +51,38 @@
                 </div>
             </template>
         </GSection>
-        <GSection id="skilles" :controllerCls="['g3-section_controller','about-me-section-controller']" >
+        <GSection id="skilles" :controllerCls="['g3-section_controller' ]" >
             <template #default >
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'Skilles'" :after="'What do I know'" />
                 </div>
                 <div class="g3-section-controller_row g3-section-controller_row-2">
                     <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 skilles-section-controller-row-2 ">
-
+                        <GSkill v-for="skill in skills" :key="skill.label" :label="skill.label" :imgUrl="skill.imgUrl" />
+                    </div>
+                </div>
+            </template>
+        </GSection>
+        <GSection id="services" :controllerCls="['g3-section_controller']" >
+            <template #default >
+                <div class="g3-section-controller_row g3-section-controller_row-1">
+                    <GHeadLine :before="'Projects'" :after="'What I Did'" />
+                </div>
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 skilles-section-controller-row-2">
+                        <GProject v-for="serv in services" :title="serv.title" :desc="serv.desc" :key="serv" />
+                    </div>
+                </div>
+            </template>
+        </GSection>
+        <GSection id="services" :controllerCls="['g3-section_controller']" >
+            <template #default >
+                <div class="g3-section-controller_row g3-section-controller_row-1">
+                    <GHeadLine :before="'Services'" :after="'What Can I Offer'" />
+                </div>
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 skilles-section-controller-row-2">
+                        <GService v-for="serv in services" :title="serv.title" :desc="serv.desc" :key="serv" />
                     </div>
                 </div>
             </template>
@@ -71,12 +95,69 @@
     import GSection from '@/components/Sections/GSection.vue';
     import GButton from '@/components/Buttons/GButton.vue';
     import GHeadLine from '@/components/HeadLine/GHeadLine.vue';
+    import GSkill from '@/components/Skill/GSkill.vue';
+    import GProject from '@/components/Projects/GProject.vue';
+    import GService from '@/components/Services Card/GService.vue';
     export default{
         components:{
             EnglishHeader,
             GSection,
             GButton,
             GHeadLine,
+            GSkill,
+            GProject,
+            GService,
+        },data(){
+            return{
+                skills:[
+                    {
+                        label: 'HTML',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'CSS',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'JAVASCRIPT',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'TYPESCRIPT',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'JAVA',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'C++',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'EXPRESS.JS',
+                        imgUrl: null,
+                    },
+                    {
+                        label: 'VUE.JS',
+                        imgUrl: null,
+                    },
+                ],
+                services:[
+                    {
+                        title: 'Title',
+                        desc:  'DEscription',
+                    },
+                    {
+                        title: 'Title 2',
+                        desc:  'DEscription 2',
+                    },
+                    {
+                        title: 'Title',
+                        desc:  'DEscription',
+                    },
+                ],
+            };
         }
     }
 </script>

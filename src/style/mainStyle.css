@@ -35,7 +35,7 @@ body{
 
 .g-page{
     width: 100dvw;
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 .g-controller{
@@ -49,6 +49,17 @@ body{
 }
 
 
+.g-footer{
+    background: var(--dark-green);
+    color: var(--white);
+    height: 3em;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
 
 
 @media (min-width: 1000px) {
@@ -71,7 +82,7 @@ body{
 }
 @media (max-width: 550px) {
     body{
-        font-size: 12px;
+        font-size: 11px;
     }
     .g-controller{
         width: 94%;
