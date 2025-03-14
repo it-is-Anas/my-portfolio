@@ -91,7 +91,8 @@
 
 .g3-section_controller{
     display: grid;
-    grid-template-rows: 15% 85%;
+    /* grid-template-rows: 15% 85%; */
+    grid-template-rows: 15% 1fr;
 }
 .g3-section-controller_row{
     width: 100%;
