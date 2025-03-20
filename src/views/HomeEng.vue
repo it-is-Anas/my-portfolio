@@ -65,7 +65,10 @@
                             :key="project.id"
                             :imgUrl="project.imgUrl"
                             :label="project.label"
+                            :tech="project.tech"
                             :desc="project.desc"
+                            :link="project.link"
+
                         />
                     </div>
                 </div>
