@@ -1,7 +1,7 @@
 
 
 .g-button{
-    padding: .4em  ;
+    padding: .4em 1em;
     font-weight: 700;
     border-radius: 0.3em;
     border: none;
@@ -9,7 +9,7 @@
     background: var(--green-yellow);
     color: var(--white);
     margin: 1em 0;
-    font-size: 1.3em;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -17,6 +17,10 @@
 .demo-section-text-col_text-btn{
     margin-left: auto;
     margin-right: 1em;
+}
+.demo-section-text-col_text-btn.arabic{
+    margin-left: 1em;
+    margin-right: auto;
 }
 
 

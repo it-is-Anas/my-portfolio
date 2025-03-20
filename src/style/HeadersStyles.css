@@ -30,6 +30,9 @@
     cursor: pointer;
     display: none;
 }
+.ara-header{
+    
+}
 @media (max-width: 767px) {
     .g-header_controller {
         grid-template-columns: 5em 2em;

@@ -1,0 +1,32 @@
+.g-service-card{
+    background: var(--light-gray);
+    width: 10em;
+    height: 15em;
+    width: 13em;
+    height: 16em;
+    border-radius: .4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+.g-service-card_img{
+    width: 70%;
+    height: 50%;
+}
+
+.g-service-card_label{
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: .3em;
+}
+
+
+@media (max-width: 767px) {
+    .g-service-card{
+        margin: 0.3em 20%;
+    }
+}

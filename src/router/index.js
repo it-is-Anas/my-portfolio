@@ -4,7 +4,11 @@ const routes = [
   {
     path:'/',
     component: ()=>import('../views/HomeEng.vue'),
-  }
+  },
+  {
+    path:'/lan-ara',
+    component: ()=>import('../views/HomeAra.vue'),
+  },
 ]
 
 const router = createRouter({

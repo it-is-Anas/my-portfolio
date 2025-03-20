@@ -1,5 +1,9 @@
 <template>
-    <button class="g-button" >
+
+    <a v-if="urlToDownload" download="Anas Al Hourani" class="g-button"  :href="urlToDownload">
+        {{ label }}
+    </a>
+    <button v-else class="g-button" >
         {{ label }}
     </button>
 </template>
@@ -10,6 +14,9 @@
             label:{
                 type: String,
                 default: 'Label',
+            },urlToDownload:{
+                type: String,
+                default: null,
             }
         }
     }

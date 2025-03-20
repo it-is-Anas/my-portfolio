@@ -28,6 +28,10 @@
     top: 0;
     max-width: 15em;
 }
+.g-mobile-menu.arabic{
+    right: auto;
+    left: 0;
+}
 .g-mobile-menu_group{
     width: 100%;
     display: flex;
@@ -48,6 +52,10 @@
 
 .g-pop-up_close-btn{
     display: none;
+}
+.g-pop-up_close-btn.arabic{
+    left: 0;
+    right: auto;
 }
 
 @media (max-width: 550px) {
