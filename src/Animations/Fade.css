@@ -1,0 +1,9 @@
+.fade-enter-from{
+    opacity: 0;
+}
+.fade-enter-active{
+    transition: .4s all ease;
+}
+.fade-enter-to{
+    opacity: 1;
+}

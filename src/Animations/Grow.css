@@ -1,0 +1,9 @@
+.grow-enter-from{
+    transform: scale(0);
+}
+.grow-enter-active{
+    transition: 1s all ease;
+}
+.grow-enter-to{
+    transform: scale(1);
+}

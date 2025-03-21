@@ -16,4 +16,8 @@ import './style/Skill.css';
 import './style/ProjectCard.css';
 import './style/ServiceCard.css';
 import './style/InputStyle.css';
+// animations
+import './Animations/SlideUp.css';
+import './Animations/Grow.css';
+import './Animations/Fade.css';
 createApp(App).use(store).use(router).mount('#app')

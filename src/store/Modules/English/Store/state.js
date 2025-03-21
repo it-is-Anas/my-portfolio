@@ -1,7 +1,7 @@
 export default function (){
     return {
         demoSection: {
-            welcoming: 'Welcome to my Portofolio',
+            welcoming: 'Welcome to my Portofolio', 
             name:'It\'s Anas Al Hourani',
             role: 'Full-Stack Web Develope',
             bio: `

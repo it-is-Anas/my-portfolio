@@ -37,7 +37,12 @@
     margin: .3em 0;
     font-weight: 700;
     font-size: 1.1em;
-    
+    width: 100%;
+    min-height: 1em;
+}
+
+.demo-section-text_content{
+
 }
 
 .demo-section-text-col_text-name{
@@ -46,7 +51,8 @@
     font-weight: bold;
     margin-left: .4em;
     margin: .3em 0;
-
+    width: 100%;
+    height: 1.4em;
 }
 
 .demo-section-text-col_text-role{
@@ -54,14 +60,22 @@
     font-weight: 700;
     font-size: 1.1em;
     margin: .3em 0;
-
+    width: 100%;
+    min-height: 1em;
 }
 .demo-section-text-col_text-bio{
     width: 95%;
     margin: 0 auto;
     font-weight: 600;
     margin: .3em 0;
+    width: 100%;
+    min-height: 10em;
+}
 
+.demo-section_btn-controller{
+    min-height: 4em;
+    width: 100%;
+    display: flex;
 }
 
 .demo-section_picture-col{
@@ -132,7 +146,9 @@
     font-size: 1.2em;
     font-weight: 600;
     width: 90%;
-    padding: 1em
+    padding: 1em;
+    min-height: 20em;
+    width: 100%;
 }
 
 .about-me-section-controller-row-2_col-1{
