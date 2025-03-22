@@ -12,7 +12,7 @@
                         </transition>
                     </p>
                     <p class="demo-section-text-col_text-name">
-                        <transition   name="grow" >
+                        <transition   name="slide-up" >
                             <p v-if="demoSectionName" class="demo-section-text_content" >
                                 {{ getDemoSection.name }}
                             </p>
@@ -189,52 +189,65 @@
                 skillSectionSkillBox: false, 
                 projectSectionProjectBox:false, 
                 serviceSectionServiceBox:false, 
+                gPageScroll: 0,
+                gPageMaxScroll: 0,
+                part: 0,
+                time: 1000,
             };
         },mounted(){
-            const time = 500;
-            const demoSection = document.querySelector('#demo');
-            demoSection.onmousemove =()=>{
+            this.trackScroll();
+            this.demoSectionAnimation();
+        },methods:{
+            demoSectionAnimation(){
                 setTimeout(() => {
-                    this.demoSectionWelcome = true;
+                this.demoSectionWelcome = 1;
+                setTimeout(() => {
+                    this.demoSectionName = 1;
                     setTimeout(() => {
-                        this.demoSectionName = true;
+                        this.demoSectionRole = 1;
                         setTimeout(() => {
-                            this.demoSectionRole = true;
+                            this.demoSectionBio = 1;
                             setTimeout(() => {
-                                this.demoSectionBio = true;
-                                setTimeout(() => {
-                                    this.demoSectionBtn = true;
-                                },time);
-                            },time);
-                        },time);
-                    },time);
+                                this.demoSectionBtn = 1;
+                            }, this.time);
+                        }, this.time);
+                    }, this.time);
+                }, this.time);
+            }, this.time);
+            },
+            aboutMeSectionAnimation(){
+                this.aboutMeSectionText = 1;
+            },
+            skillSectionAnimation(){
+                this.skillSectionSkillBox = 1;
+            },
+            projectSectionAnimation(){
+                this.projectSectionProjectBox = 1;
+            },
+            serviceSectionAnimation(){
+                this.serviceSectionServiceBox = 1;
+            },
+            trackScroll(){
+                const gPage= document.querySelector('.g-page');
+                this.gPageMaxScroll = gPage.scrollHeight;
+                this.part = this.gPageMaxScroll / 12;
+                gPage.addEventListener('scroll',()=>{
+                    this.gPageScroll = gPage.scrollTop;
                 });
-            };
-            
-            const aboutMeSection = document.querySelector('#aboutme');
-            aboutMeSection.onmouseenter = ()=>{
-                setTimeout(() => {
-                    this.aboutMeSectionText = true;
-                }, time);
-            };
-            const projectSection = document.querySelector('#project');
-            projectSection.onmouseenter = ()=>{
-                setTimeout(() => {
-                    this.projectSectionProjectBox = true;
-                }, time);
-            };
-            const serviceSection = document.querySelector('#services');
-            serviceSection.onmouseenter = ()=>{
-                setTimeout(() => {
-                    this.serviceSectionServiceBox = true;
-                }, time);
-            };
-            const skillSection = document.querySelector('#skilles');
-            skillSection.onmouseenter = ()=>{
-                setTimeout(() => {
-                    this.skillSectionSkillBox = true;
-                }, time);
-            };
+
+            },
+        },watch: {
+            gPageScroll(val){
+                if(val > 2 * this.part && val < 4 * this.part){
+                    this.aboutMeSectionAnimation();
+                }else if(val > 4 * this.part && val < 6 * this.part){
+                    this.skillSectionAnimation();
+                }else if(val > 6 * this.part && val < 8 * this.part){
+                    this.projectSectionAnimation();
+                }else if(val > 8 * this.part && val < 10 * this.part){
+                    this.serviceSectionAnimation();
+                }
+            },
         }
     }
 </script>

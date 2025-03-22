@@ -36,6 +36,8 @@ body{
 .g-page{
     width: 100dvw;
     height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .g-controller{
