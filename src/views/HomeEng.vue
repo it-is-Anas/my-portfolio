@@ -230,7 +230,7 @@
             trackScroll(){
                 const gPage= document.querySelector('.g-page');
                 this.gPageMaxScroll = gPage.scrollHeight;
-                this.part = this.gPageMaxScroll / 12;
+                this.part = this.gPageMaxScroll / 13.5;
                 gPage.addEventListener('scroll',()=>{
                     this.gPageScroll = gPage.scrollTop;
                 });
