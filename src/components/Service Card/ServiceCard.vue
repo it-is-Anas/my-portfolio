@@ -1,6 +1,6 @@
 <template>
     <div class="g-service-card" >
-        <img v-if="imgUrl" :src="imgUrl" alt="" class="g-service-card_img" loading="lazy" >
+        <img v-if="imgName" :src="imgSrc" alt="" class="g-service-card_img" loading="lazy" >
         <img v-else src="../../assets/logo.png" alt="" class="g-service-card_img" loading="lazy" >
         <div class="g-service-card_label">
             {{ lable }}
@@ -10,12 +10,16 @@
 <script>
 export default {
     props:{
-        imgUrl:{
+        imgName:{
             default: null,
             type: String
         },lable:{
             default:'Label',
             type: String
+        }
+    },computed: {
+        imgSrc(){
+            return require('@/assets/ServicesImgs/' + this.imgName);
         }
     }
 }

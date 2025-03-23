@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div class="g-page" >
         <EnglishHeader />
         <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller']" >
@@ -80,7 +80,7 @@
                                 :key="skill.id"
                                 :id="skill.id"
                                 :label="skill.label"
-                                :imgUrl="skill.imgUrl"
+                                :imgName="skill.img"
                             />
                         </div>
                     </transition>
@@ -120,7 +120,7 @@
                             <ServiceCard v-for="service in getServices"
                                 :key="service.id"
                                 :id="service.id"
-                                :imgUrl="service.imgUrl"
+                                :imgName="service.imgName"
                                 :lable="service.lable"
                             />
                         </div>
