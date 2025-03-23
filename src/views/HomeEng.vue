@@ -98,7 +98,7 @@
                         <div v-if="projectSectionProjectBox" class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex ">
                             <ProjectCard v-for="project in getProjects" 
                                 :key="project.id"
-                                :imgUrl="project.imgUrl"
+                                :imgName="project.imgName"
                                 :label="project.label"
                                 :tech="project.tech"
                                 :desc="project.desc"
