@@ -16,6 +16,7 @@ import './style/Skill.css';
 import './style/ProjectCard.css';
 import './style/ServiceCard.css';
 import './style/InputStyle.css';
+import './style/SocialMediaBar.css';
 // animations
 import './Animations/SlideUp.css';
 import './Animations/Grow.css';

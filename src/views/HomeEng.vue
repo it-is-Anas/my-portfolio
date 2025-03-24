@@ -134,10 +134,13 @@
                     <GHeadLine :before="'Contact Me'" :after="'Let\'s Start a project '" />
                 </div>
                 <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2">
-                    <InputFiled :label="'Your name : '" :placeholder="'Jhon'" />
-                    <InputFiled :label="'Your email :'" :placeholder="'Jhon@example.com'"  />
-                    <TextAreaFiled :label="'Message :'" placeholder="Message from Jhon"  /> 
-                    <GButton :label="'Send'"  />
+                    <div class="contact-me-contoller_send-box">
+                        <InputFiled :label="'Your name : '" :placeholder="'Jhon'" />
+                        <InputFiled :label="'Your email :'" :placeholder="'Jhon@example.com'"  />
+                        <TextAreaFiled :label="'Message :'" placeholder="Message from Jhon"  /> 
+                        <GButton :label="'Send'"  />
+                    </div>
+                    <SocialMediaBar />
                 </div>
             </template>
         </GSection>
@@ -157,6 +160,7 @@
     import TextAreaFiled from '@/components/Inputs/TextAreaFiled.vue';
     import EngFooter from '@/components/Footers/EngFooter.vue';    
     import { mapGetters } from 'vuex';
+    import SocialMediaBar from '@/components/SocialMediaBar/SocialMediaBar.vue';
     export default{
         components:{
             EnglishHeader,
@@ -169,6 +173,7 @@
             InputFiled,
             TextAreaFiled,
             EngFooter,
+            SocialMediaBar,
         },computed:{
             ...mapGetters({
                 'getDemoSection': 'englishStore/getDemoSection',
