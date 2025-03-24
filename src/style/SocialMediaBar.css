@@ -19,6 +19,7 @@
     .social-media-bar{
         width: 80%;
         min-height: 4em;
+        flex-wrap: wrap;
         flex-direction: row;
     }
 

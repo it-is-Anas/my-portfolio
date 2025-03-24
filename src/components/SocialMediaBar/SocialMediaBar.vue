@@ -1,7 +1,7 @@
 <template>
     <div class="social-media-bar" >
         <SocialMediaIcon :imgName="'wa.png'" />
-        <SocialMediaIcon :imgName="'telegram.png'" />
+        <SocialMediaIcon :imgName="'fb.png'" />
         <SocialMediaIcon :imgName="'li.png'" />
         <SocialMediaIcon :imgName="'in.png'" />
         <SocialMediaIcon :imgName="'github.png'" />
