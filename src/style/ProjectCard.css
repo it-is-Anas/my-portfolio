@@ -30,7 +30,8 @@
     font-size: 1.4em;
     font-weight: 700;
     padding: .3em;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
+    font-size: 1em;
 }
 
 .g-project-card_tech{

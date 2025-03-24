@@ -1,54 +1,68 @@
-<template>
-    <div class="g-page" >
+<template> 
+    <div class="g-page arabic" >
         <AraHeader />
-        <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller']" >
+        <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller','']" >
             <template #default >
-                <div class="demo-section_col demo-section_picture-col">
-                    <span class="demo-section-picture-col_before-circle"></span>
-                    <img src="../assets/pic1.png" alt="" class="demo-section-picture-col_picture" loading="lazy" >
-                </div>
-                <div class="demo-section_col arabic demo-section_text-col">
-                    <p class="demo-section-text-col_text-welcoming">مرحبا في معرض أعمالي</p>
-                    <p class="demo-section-text-col_text-name">إنه أنس الحوراني</p>
-                    <p class="demo-section-text-col_text-role">مطور واجهات أمامية</p>
-                    <p class="demo-section-text-col_text-bio">
-                        مطور واجهات أمامية شغوف مطور و
-                        اجهات أمامية شغوف مطور واجهات أمامية 
-                        شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف 
-                        مطور واجهات أمامية شغوف 
-                        مطور واجهات أمامية شغوف 
-                        رمطور واجهات أمامية شغوف 
-                        ررررمطور واجهات 
-                        أمامية شغوف مطور واجهات أمامية شغوف مطور 
-                        واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف 
+                <div class="demo-section_col demo-section_text-col">
+                    <p class="demo-section-text-col_text-welcoming">
+                        <transition   name="slide-up" >
+                            <p v-if="demoSectionWelcome" class="demo-section-text_content" >
+                                {{ getDemoSection.welcoming }}
+                            </p>
+                        </transition>
                     </p>
-                    <GButton :label="'وظفني'" class="demo-section-text-col_text-btn arabic" />
+                    <p class="demo-section-text-col_text-name">
+                        <transition   name="slide-up" >
+                            <p v-if="demoSectionName" class="demo-section-text_content" >
+                                {{ getDemoSection.name }}
+                            </p>
+                        </transition>
+                    </p>
+                    <p class="demo-section-text-col_text-role">
+                        <transition   name="slide-up" >
+                            <p v-if="demoSectionRole" class="demo-section-text_content" >
+                                {{ getDemoSection.role }}
+                            </p>
+                        </transition>
+                    </p>
+                    <p class="demo-section-text-col_text-bio">
+                        <transition   name="slide-up" >
+                            <p v-if="demoSectionBio" class="demo-section-text_content" >
+                                {{ getDemoSection.bio }}
+                            </p>
+                        </transition>
+                    </p>
+                    <div class="demo-section_btn-controller">
+                        <transition name="slide-up" >
+                            <GButton v-if="demoSectionBtn" :label="'وظفني'" class="demo-section-text-col_text-btn arabic" />
+                        </transition>
+                    </div>
+                </div>
+                <div class="demo-section_col demo-section_picture-col">
+                    <span  class="demo-section-picture-col_before-circle"></span>
+                    <img src="../assets/pic1.png" alt="" class="demo-section-picture-col_picture" loading="lazy" >
                 </div>
             </template>
         </GSection>
         <GSection id="aboutme" :controllerCls="['g3-section_controller','about-me-section-controller']" >
             <template #default>
                 <div class="g3-section-controller_row g3-section-controller_row-1">
-                    <GHeadLine :before="'معلومات عني'" :after="'لمحة صغيرة'" />
+                    <GHeadLine :before="'معلومات عني'" :after="'لمحة صغيرة عني'" />
                 </div>
-                <div class="g3-section-controller_row g3-section-controller_row-2 ">
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 about-me-section-controller-row-2_col-1">
+                        <div class="about-me-section-controller-row-2-col-1_text">
+                            <transition name="grow" >
+                                <p v-if="aboutMeSectionText" class="about-me-section-controller-row-2-col-1-text_content">
+                                    {{ getAboutMeSection.text }}
+                                </p>
+                            </transition>
+                        </div>
+                        <GButton :urlToDownload="getAboutMeSection.cvUrl" :label="'تحميل السيرة الذاتية'" class="demo-section-text-col_text-btn arabic" />
+                    </div>
                     <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-2 about-me-section-controller-row-2_col-2">
                         <span class="demo-section-picture-col_before-circle"></span>
                         <img src="../assets/pic2.png" alt="" class="demo-section-picture-col_picture about-me-section-controller-row-2-col-2_picture" loading="lazy" >
-                    </div>
-                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 about-me-section-controller-row-2_col-1 arabic">
-                        <p class="about-me-section-controller-row-2-col-1_text">
-                            مطور واجهات أمامية شغوف مطور و
-                            اجهات أمامية شغوف مطور واجهات أمامية 
-                            شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف 
-                            مطور واجهات أمامية شغوف 
-                            مطور واجهات أمامية شغوف 
-                            رمطور واجهات أمامية شغوف 
-                            ررررمطور واجهات 
-                            أمامية شغوف مطور واجهات أمامية شغوف مطور 
-                            واجهات أمامية شغوف مطور واجهات أمامية شغوف مطور واجهات أمامية شغوف 
-                        </p>
-                        <GButton :urlToDownload="getAboutMeSection.cvUrl" :label="'تحميل السيرة الذاتية'" class="demo-section-text-col_text-btn arabic" />
                     </div>
                 </div>
             </template>
@@ -58,15 +72,19 @@
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'مهاراتي'" :after="'ماذا أعرف'" />
                 </div>
-                <div class="g3-section-controller_row g3-section-controller_row-2 arabic">
-                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex ">
-                        <Skill v-for="skill in getskills.skills"
-                            :key="skill.id"
-                            :id="skill.id"
-                            :label="skill.label"
-                            :imgUrl="skill.imgUrl"
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <transition name="slide-up" >                    
+                        <div v-if="skillSectionSkillBox" class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex ">
+                            <Skill 
+                                v-for="skill in getskills.skills"
+                                :key="skill.id"
+                                :id="skill.id"
+                                :label="skill.label"
+                                :imgName="skill.img"
                             />
-                    </div>
+                        </div>
+                    </transition>
+
                 </div>
             </template>
         </GSection>
@@ -75,15 +93,19 @@
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'مشاريعي'" :after="'مشاريعي التي قمت بها'" />
                 </div>
-                <div class="g3-section-controller_row g3-section-controller_row-2 ">
-                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex arabic">
-                        <ProjectCard v-for="project in getProjects" 
-                            :key="project.id"
-                            :imgUrl="project.imgUrl"
-                            :label="project.label"
-                            :desc="project.desc"
-                        />
-                    </div>
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <transition name="slide-up" >
+                        <div v-if="projectSectionProjectBox" class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex ">
+                            <ProjectCard v-for="project in getProjects" 
+                                :key="project.id"
+                                :imgName="project.imgName"
+                                :label="project.label"
+                                :tech="project.tech"
+                                :desc="project.desc"
+                                :link="project.link"
+                            />
+                        </div>
+                    </transition>
                 </div>
             </template>
         </GSection>
@@ -92,32 +114,37 @@
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'خداماتي'" :after="'مالذي يمككني فعله'" />
                 </div>
-                <div class="g3-section-controller_row g3-section-controller_row-2 ">
-                    <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex arabic">
-                        <ServiceCard v-for="service in getServices"
-                            :key="service.id"
-                            :id="service.id"
-                            :imgUrl="service.imgUrl"
-                            :lable="service.lable"
-                        />
-                    </div>
+                <div class="g3-section-controller_row g3-section-controller_row-2">
+                    <transition name="slide-up" >
+                        <div v-if="serviceSectionServiceBox" class="g3-section-controller-row-2_col g3-section-controller-row-2_col-1 g3-section-controller_row-2-flex ">
+                            <ServiceCard v-for="service in getServices"
+                                :key="service.id"
+                                :id="service.id"
+                                :imgName="service.imgName"
+                                :lable="service.lable"
+                            />
+                        </div>
+                    </transition>
                 </div>
             </template>
         </GSection>
-        <GSection id="contactme" :controllerCls="['g3-section_controller','about-me-section-controller']" >
+        <GSection id="contactme " :controllerCls="['g3-section_controller','about-me-section-controller']" >
             <template #default >
                 <div class="g3-section-controller_row g3-section-controller_row-1">
-                    <GHeadLine :before="'تواصل معي'" :after="'هيا نبدأ مشروع جديد'" />
+                    <GHeadLine :before="'تواصل معي'" :after="'هيا نبدأ مشروع جديد '" />
                 </div>
-                <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2 arabic">
-                    <InputFiled :label="'الاسم :'" :placeholder="'حسن'" />
-                    <InputFiled :label="'بريدك الإلكتروني :'" :placeholder="'Jhon@example.com'"  />
-                    <TextAreaFiled :label="'رسالتك :'" placeholder="مرحبا أنا حسن"  /> 
-                    <GButton :label="'إرسال'"  />
+                <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2">
+                    <div class="contact-me-contoller_send-box">
+                        <InputFiled :label="'الاسم : : '" :placeholder="'حسن'" />
+                        <InputFiled :label="'بريدك الإلكتروني :'" :placeholder="'Jhon@example.com'"  />
+                        <TextAreaFiled :label="'رسالتك :'" placeholder="مرحبا أنا حسن"  /> 
+                        <GButton class="arabic" :label="'إرسال'"  />
+                    </div>
+                    <SocialMediaBar />
                 </div>
             </template>
         </GSection>
-        <ara-footer />
+        <eng-footer />
     </div>
 </template>
 
@@ -131,8 +158,9 @@
     import ServiceCard from '@/components/Service Card/ServiceCard.vue';
     import InputFiled from '@/components/Inputs/InputFiled.vue';
     import TextAreaFiled from '@/components/Inputs/TextAreaFiled.vue';
-    import AraFooter from '@/components/Footers/ِAraFooter.vue';
+    import EngFooter from '@/components/Footers/EngFooter.vue';    
     import { mapGetters } from 'vuex';
+    import SocialMediaBar from '@/components/SocialMediaBar/SocialMediaBar.vue';
     export default{
         components:{
             AraHeader,
@@ -144,15 +172,87 @@
             ServiceCard,
             InputFiled,
             TextAreaFiled,
-            AraFooter,
+            EngFooter,
+            SocialMediaBar,
         },computed:{
             ...mapGetters({
-                'getDemoSection': 'englishStore/getDemoSection',
-                'getAboutMeSection': 'englishStore/getAboutMeSection',
-                'getskills': 'englishStore/getSkills',
-                'getProjects': 'englishStore/getProjects',
-                'getServices': 'englishStore/getServices',
+                'getDemoSection': 'arabicStore/getDemoSection',
+                'getAboutMeSection': 'arabicStore/getAboutMeSection',
+                'getskills': 'arabicStore/getSkills',
+                'getProjects': 'arabicStore/getProjects',
+                'getServices': 'arabicStore/getServices',
             })
+        },data(){
+            return {
+                scroll: 0,
+                demoSectionWelcome: false,  
+                demoSectionName: false,  
+                demoSectionRole: false,  
+                demoSectionBio: false,  
+                demoSectionBtn: false,  
+                aboutMeSectionText: false,  
+                skillSectionSkillBox: false, 
+                projectSectionProjectBox:false, 
+                serviceSectionServiceBox:false, 
+                gPageScroll: 0,
+                gPageMaxScroll: 0,
+                part: 0,
+                time: 1000,
+            };
+        },mounted(){
+            this.trackScroll();
+            this.demoSectionAnimation();
+        },methods:{
+            demoSectionAnimation(){
+                setTimeout(() => {
+                this.demoSectionWelcome = 1;
+                setTimeout(() => {
+                    this.demoSectionName = 1;
+                    setTimeout(() => {
+                        this.demoSectionRole = 1;
+                        setTimeout(() => {
+                            this.demoSectionBio = 1;
+                            setTimeout(() => {
+                                this.demoSectionBtn = 1;
+                            }, this.time);
+                        }, this.time);
+                    }, this.time);
+                }, this.time);
+            }, this.time);
+            },
+            aboutMeSectionAnimation(){
+                this.aboutMeSectionText = 1;
+            },
+            skillSectionAnimation(){
+                this.skillSectionSkillBox = 1;
+            },
+            projectSectionAnimation(){
+                this.projectSectionProjectBox = 1;
+            },
+            serviceSectionAnimation(){
+                this.serviceSectionServiceBox = 1;
+            },
+            trackScroll(){
+                const gPage= document.querySelector('.g-page');
+                this.gPageMaxScroll = gPage.scrollHeight;
+                this.part = this.gPageMaxScroll / 13.5;
+                gPage.addEventListener('scroll',()=>{
+                    this.gPageScroll = gPage.scrollTop;
+                });
+
+            },
+        },watch: {
+            gPageScroll(val){
+                if(val > 2 * this.part && val < 4 * this.part){
+                    this.aboutMeSectionAnimation();
+                }else if(val > 4 * this.part && val < 6 * this.part){
+                    this.skillSectionAnimation();
+                }else if(val > 6 * this.part && val < 8 * this.part){
+                    this.projectSectionAnimation();
+                }else if(val > 8 * this.part && val < 10 * this.part){
+                    this.serviceSectionAnimation();
+                }
+            },
         }
     }
 </script>

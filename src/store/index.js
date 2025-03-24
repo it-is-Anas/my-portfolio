@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import EnglishModul from './Modules/English'
+import ArabicModul from './Modules/Arabic'
 export default createStore({
   state: {
   },
@@ -10,6 +11,7 @@ export default createStore({
   actions: {
   },
   modules: {
-    englishStore: EnglishModul
+    englishStore: EnglishModul,
+    arabicStore: ArabicModul
   }
 })
