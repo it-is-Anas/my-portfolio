@@ -3,11 +3,12 @@
         <template #default>
             <HeaderLogo :label="'أنس'" />
             <ul class="g-header-controller_nav-bar " >
-                <router-link class="g-header-nav-bar_btn" to="#demo" >لمحة</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#aboutme" >معلومات عني</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#skilles" >مهاراتي</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#projects" >مشاريعي</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#contactme" >تواصل معي</router-link>
+                <a class="g-header-nav-bar_btn" href="#demo" >لمحة</a>
+                <a class="g-header-nav-bar_btn" href="#aboutme" >معلومات عني</a>
+                <a class="g-header-nav-bar_btn" href="#skilles" >مهاراتي</a>
+                <a class="g-header-nav-bar_btn" href="#project" >مشاريعي</a>
+                <a class="g-header-nav-bar_btn" href="#services" >خداماتي</a>
+                <a class="g-header-nav-bar_btn" href="#contactme" >تواصل معي</a>
             </ul>
             <router-link class="g-header-nav-bar_btn" to="/" >English</router-link>    
             <i class="fa fa-bars g-header_menu" @click="openMenuMobile" ></i>      

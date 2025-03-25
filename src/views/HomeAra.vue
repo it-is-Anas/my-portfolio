@@ -2,7 +2,7 @@
     <div class="g-page arabic" >
         <AraHeader />
         <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller','']" >
-            <template #default >
+            <template #default > 
                 <div class="demo-section_col demo-section_text-col">
                     <p class="demo-section-text-col_text-welcoming">
                         <transition   name="slide-up" >
@@ -34,7 +34,7 @@
                     </p>
                     <div class="demo-section_btn-controller">
                         <transition name="slide-up" >
-                            <GButton v-if="demoSectionBtn" :label="'وظفني'" class="demo-section-text-col_text-btn arabic" />
+                            <GButton v-if="demoSectionBtn" :label="'وظفني'" class="demo-section-text-col_text-btn " />
                         </transition>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                 </p>
                             </transition>
                         </div>
-                        <GButton :urlToDownload="getAboutMeSection.cvUrl" :label="'تحميل السيرة الذاتية'" class="demo-section-text-col_text-btn arabic" />
+                        <GButton :urlToDownload="getAboutMeSection.cvUrl" :label="'تحميل السيرة الذاتية'" class="demo-section-text-col_text-btn" />
                     </div>
                     <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-2 about-me-section-controller-row-2_col-2">
                         <span class="demo-section-picture-col_before-circle"></span>
@@ -128,7 +128,7 @@
                 </div>
             </template>
         </GSection>
-        <GSection id="contactme " :controllerCls="['g3-section_controller','about-me-section-controller']" >
+        <GSection id="contactme" :controllerCls="['g3-section_controller','about-me-section-controller']" >
             <template #default >
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'تواصل معي'" :after="'هيا نبدأ مشروع جديد '" />

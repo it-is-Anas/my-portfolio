@@ -3,11 +3,12 @@
         <template #default>
             <HeaderLogo :label="'Anas'" />
             <ul class="g-header-controller_nav-bar" >
-                <router-link class="g-header-nav-bar_btn" to="#demo" >Demo</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#aboutme" >About Me</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#skilles" >Skilles</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#projects" >Projects</router-link>
-                <router-link class="g-header-nav-bar_btn" to="#contactme" >Contact Me</router-link>
+                <a class="g-header-nav-bar_btn" href="#demo" >Demo</a>
+                <a class="g-header-nav-bar_btn" href="#aboutme" > About Me  </a>
+                <a class="g-header-nav-bar_btn" href="#skilles" >Skilles</a>
+                <a class="g-header-nav-bar_btn" href="#project" >Projects</a>
+                <a class="g-header-nav-bar_btn" href="#services" >Services</a>
+                <a class="g-header-nav-bar_btn" href="#contactme" >  Contact Me</a>
             </ul>
             <router-link class="g-header-nav-bar_btn" to="/lan-ara" >عربي</router-link>    
             <i class="fa fa-bars g-header_menu" @click="openMenuMobile" ></i>        
@@ -22,7 +23,7 @@
 import GHeader from '@/components/Headers/GHeader.vue';
 import HeaderLogo from '@/components/Logos/HeaderLogo.vue';
 import GMobileMenu from '@/components/PopUps/GMobileMenuEng.vue';
-export default{
+export default{ 
     components:{
         GHeader,
         HeaderLogo,

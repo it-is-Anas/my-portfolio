@@ -224,6 +224,12 @@
     .about-me-section-controller-row-2-col-1_text{
         text-align: center;
     }
+    .arabic .demo-section-text-col_text-bio{
+        min-height: 5em;
+    }
+    .arabic .about-me-section-controller-row-2-col-1_text {
+        min-height: 12em;
+    }
     .demo-section_picture-col{
         font-size: 12px;
         align-items: flex-end;

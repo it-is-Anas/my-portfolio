@@ -7,19 +7,22 @@
                 <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="/" @click="close" >English</router-link>
             </div>
             <div class="g-mobile-menu_group arabic" >
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="#demo"  @click="close" >لمحة</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#demo" @click="close" >لمحة</a>
             </div>
             <div class="g-mobile-menu_group arabic" >
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="#aboutme"  @click="close" >معلومات عني</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#aboutme" @click="close" >معلومات عني</a>
             </div>
             <div class="g-mobile-menu_group arabic">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="#skilles"  @click="close" >مهاراتي</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#skilles" @click="close" > مهاراتي</a>
             </div>
             <div class="g-mobile-menu_group arabic">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="#projects"  @click="close" >مشاريع</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#project" @click="close" > مشاريع</a>
             </div>
             <div class="g-mobile-menu_group arabic">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn" to="#contactme"  @click="close" >تواصل معي</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#services" @click="close" > خداماتي</a>
+            </div>
+            <div class="g-mobile-menu_group arabic">
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn" href="#contactme" @click="close" > تواصل معي</a>
             </div>
         </div>
     </div>

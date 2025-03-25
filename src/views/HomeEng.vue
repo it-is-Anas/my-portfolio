@@ -128,7 +128,7 @@
                 </div>
             </template>
         </GSection>
-        <GSection id="contactme " :controllerCls="['g3-section_controller','about-me-section-controller']" >
+        <GSection id="contactme" :controllerCls="['g3-section_controller','about-me-section-controller']" >
             <template #default >
                 <div class="g3-section-controller_row g3-section-controller_row-1">
                     <GHeadLine :before="'Contact Me'" :after="'Let\'s Start a project '" />

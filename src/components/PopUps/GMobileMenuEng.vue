@@ -7,19 +7,22 @@
                 <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" to="/lan-ara" >عربي</router-link>
             </div>
             <div class="g-mobile-menu_group" >
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" to="#demo" >Demo</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" href="#demo" >Demo</a>
             </div>
             <div class="g-mobile-menu_group" >
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close"  to="#aboutme" >About Me</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close"  href="#aboutme" >About Me</a>
             </div>
             <div class="g-mobile-menu_group">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" to="#skilles" >Skilles</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" href="#skilles" >Skilles</a>
             </div>
             <div class="g-mobile-menu_group">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" to="#projects" >Projects</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" href="#project" >Projects</a>
             </div>
             <div class="g-mobile-menu_group">
-                <router-link class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" to="#contactme" >Contact Me</router-link>
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" href="#services" >Services</a>
+            </div>
+            <div class="g-mobile-menu_group">
+                <a class="g-header-nav-bar_btn g-mobile-menu_btn"  @click="close" href="#contactme" >Contact Me</a>
             </div>
         </div>
     </div>
