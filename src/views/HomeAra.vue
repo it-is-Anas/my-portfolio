@@ -145,7 +145,9 @@
             </template>
         </GSection>
         <eng-footer />
+        <app-msg ref="appMsg" />
     </div>
+    <app-loader ref="appLoader" />
 </template>
 
 <script>
