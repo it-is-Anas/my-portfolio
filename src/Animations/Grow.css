@@ -7,3 +7,12 @@
 .grow-enter-to{
     transform: scale(1);
 }
+.grow-leave-from{
+    transform: scale(1);
+}
+.grow-leave-active{
+    transition: 1s all ease;
+}
+.grow-leave-to{
+    transform: scale(0);
+}

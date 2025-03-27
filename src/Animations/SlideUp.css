@@ -9,3 +9,14 @@
     opacity: 1;
     transform: translate(0,0);
 }
+.slide-up-leave-from{
+    opacity: 1;
+    transform: translate(0,0);
+}
+.slide-up-leave-active{
+    transition: 1s all ease;
+}
+.slide-up-leave-to{
+    transform: translate(0,5em);
+    opacity: 0;
+}

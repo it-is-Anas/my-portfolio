@@ -7,3 +7,12 @@
 .fade-enter-to{
     opacity: 1;
 }
+.fade-leave-from{
+    opacity: 1;
+}
+.fade-leave-active{
+    transition: .4s all ease;
+}
+.fade-leave-to{
+    opacity: 0;
+}

@@ -17,8 +17,20 @@ import './style/ProjectCard.css';
 import './style/ServiceCard.css';
 import './style/InputStyle.css';
 import './style/SocialMediaBar.css';
+import './style/GlubalCmps.css';
 // animations
 import './Animations/SlideUp.css';
 import './Animations/Grow.css';
 import './Animations/Fade.css';
-createApp(App).use(store).use(router).mount('#app')
+
+
+const app = createApp(App);
+
+// g cmp
+import AppMsg from './gCmps/AppMsg.vue';
+import AppLoader from './gCmps/AppLoader.vue';
+
+app.component('AppMsg',AppMsg);
+app.component('AppLoader',AppLoader);
+
+app.use(store).use(router).mount('#app')

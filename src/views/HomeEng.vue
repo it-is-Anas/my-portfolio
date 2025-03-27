@@ -145,7 +145,9 @@
             </template>
         </GSection>
         <eng-footer />
+        <AppMsg ref="appMsg"  />
     </div>
+    <AppLoader ref="appLoader" />
 </template>
 
 <script>
@@ -161,6 +163,7 @@
     import EngFooter from '@/components/Footers/EngFooter.vue';    
     import { mapGetters } from 'vuex';
     import SocialMediaBar from '@/components/SocialMediaBar/SocialMediaBar.vue';
+
     export default{
         components:{
             EnglishHeader,

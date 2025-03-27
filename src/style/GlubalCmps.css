@@ -1,0 +1,56 @@
+.g-app-msg{
+    position: fixed;
+    bottom: .5em;
+    left: 50%;
+    z-index: 1500;
+    padding: .5em 1em;
+    transform: translate(-50%, -50%);
+    border-radius: .3em;
+    font-weight: bold;
+    background: var(--light-green);
+    color: var(--white);
+}
+
+
+.g-app-loader{
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.g-app-loader_bkg{
+    background: var(--light-gray);
+    opacity: .3;
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    top: 0%;
+
+}
+.g-app-loader_loader{
+    border-radius: 50%;
+    border: .3em solid var(--dark-green);
+    border-color: var(--dark-green) var(--dark-green) var(--dark-green) transparent;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation-name: loaderRotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes loaderRotate {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
