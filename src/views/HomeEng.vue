@@ -34,7 +34,7 @@
                     </p>
                     <div class="demo-section_btn-controller">
                         <transition name="slide-up" >
-                            <GButton v-if="demoSectionBtn" :label="'Hire ME'" class="demo-section-text-col_text-btn" />
+                            <GButton v-if="demoSectionBtn" :link="'#contactme'" :label="`let's start a project`" class="demo-section-text-col_text-btn" />
                         </transition>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                                 </p>
                             </transition>
                         </div>
-                        <GButton :urlToDownload="getAboutMeSection.cvUrl" :label="'Download CV'" class="demo-section-text-col_text-btn" />
+                        <GButton :urlToDownload="cvUrl" :label="'Download CV'" class="demo-section-text-col_text-btn" />
                     </div>
                     <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-2 about-me-section-controller-row-2_col-2">
                         <span class="demo-section-picture-col_before-circle"></span>
@@ -181,6 +181,7 @@
                 'getskills': 'englishStore/getSkills',
                 'getProjects': 'englishStore/getProjects',
                 'getServices': 'englishStore/getServices',
+                'cvUrl': 'glubalStore/getCvUrl',
             })
         },data(){
             return {

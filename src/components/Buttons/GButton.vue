@@ -3,6 +3,9 @@
     <a v-if="urlToDownload" download="Anas Al Hourani" class="g-button"  :href="urlToDownload">
         {{ label }}
     </a>
+    <a v-else-if="link"  class="g-button" :href="link">
+            {{ label }}
+    </a>
     <button v-else class="g-button" >
         {{ label }}
     </button>
@@ -17,6 +20,9 @@
             },urlToDownload:{
                 type: String,
                 default: null,
+            },link:{
+                type: String,
+                default: null
             }
         }
     }

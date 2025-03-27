@@ -1,6 +1,7 @@
-import { createStore } from 'vuex'
-import EnglishModul from './Modules/English'
-import ArabicModul from './Modules/Arabic'
+import { createStore } from 'vuex';
+import EnglishModul from './Modules/English';
+import ArabicModul from './Modules/Arabic';
+import GlubalModul from './Modules/Glubal';
 export default createStore({
   state: {
   },
@@ -12,6 +13,7 @@ export default createStore({
   },
   modules: {
     englishStore: EnglishModul,
-    arabicStore: ArabicModul
+    arabicStore: ArabicModul,
+    glubalStore: GlubalModul
   }
 })
