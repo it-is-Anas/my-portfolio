@@ -10,6 +10,7 @@
 }
 
 
+
 :root{
     --dark-green: #3D8D7A;
     --light-green: #A3D1C6;
@@ -38,7 +39,10 @@ body{
     height: 100dvh;
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
+
+
 
 .g-controller{
     margin: 0 auto;
