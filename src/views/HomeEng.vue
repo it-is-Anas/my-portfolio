@@ -189,6 +189,7 @@
                 'name': 'emailStore/getName',
                 'email': 'emailStore/getEmail',
                 'msg': 'emailStore/getMsg',
+                'emailStoreErr': 'emailStore/getErr'
             })
         },data(){
             return {
@@ -282,6 +283,11 @@
                     this.serviceSectionAnimation();
                 }
             },
+            emailStoreErr(val){
+                if(val){
+                    this.setMsgToPage(val,5000);
+                }
+            }
         },provide(){
             return {
                 setMsg: this.setMsgToPage,

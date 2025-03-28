@@ -8,4 +8,7 @@ export default {
     getMsg(state){
         return state.msg;
     },
+    getErr(state){
+        return state.err;
+    },
 };

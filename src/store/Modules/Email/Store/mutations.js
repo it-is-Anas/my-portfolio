@@ -8,4 +8,10 @@ export default {
     setMsg(state,msg){
         state.msg = msg;
     },
+    setErr(state,err){
+        state.err = err;
+        setTimeout(() => {
+            state.err = '';
+        }, 2000);
+    },
 };

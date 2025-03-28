@@ -3,5 +3,6 @@ export default function (){
         name: '',
         email: '',
         msg: '',
+        err: '',
     };
 };
