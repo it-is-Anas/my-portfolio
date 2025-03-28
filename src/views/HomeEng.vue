@@ -135,10 +135,10 @@
                 </div>
                 <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2">
                     <div class="contact-me-contoller_send-box">
-                        <InputFiled :label="'Your name : '" :placeholder="'Jhon'" />
-                        <InputFiled :label="'Your email :'" :placeholder="'Jhon@example.com'"  />
-                        <TextAreaFiled :label="'Message :'" placeholder="Message from Jhon"  /> 
-                        <GButton :label="'Send'"  />
+                        <InputFiled :label="'Your name : '" :defaultValue="name" :placeholder="'Jhon'" :validator="nameValidator" :errMsg="'Name has to be at least 3 char at least can\'t have numbers'" :update="setName" />
+                        <InputFiled :label="'Your email :'" :defaultValue="email" :placeholder="'Jhon@example.com'" :validator="emailValidator" :errMsg="'Email is not valied'" :update="setEmail" />
+                        <TextAreaFiled :label="'Message :'"  placeholder="Message from Jhon" :validator="msgValidator" :errMsg="'msg have to be atleast 3 chars'" :defaultValue="msg"  :update="setMsg"  /> 
+                        <GButton :label="'Send'" @click="sendEmail" />
                     </div>
                     <SocialMediaBar />
                 </div>
@@ -161,7 +161,7 @@
     import InputFiled from '@/components/Inputs/InputFiled.vue';
     import TextAreaFiled from '@/components/Inputs/TextAreaFiled.vue';
     import EngFooter from '@/components/Footers/EngFooter.vue';    
-    import { mapGetters } from 'vuex';
+    import { mapActions, mapGetters, mapMutations } from 'vuex';
     import SocialMediaBar from '@/components/SocialMediaBar/SocialMediaBar.vue';
 
     export default{
@@ -185,6 +185,10 @@
                 'getProjects': 'englishStore/getProjects',
                 'getServices': 'englishStore/getServices',
                 'cvUrl': 'glubalStore/getCvUrl',
+                // form 
+                'name': 'emailStore/getName',
+                'email': 'emailStore/getEmail',
+                'msg': 'emailStore/getMsg',
             })
         },data(){
             return {
@@ -207,6 +211,26 @@
             this.trackScroll();
             this.demoSectionAnimation();
         },methods:{
+            nameValidator(val){
+                const  regex=  /^(?!.*\d)[a-zA-Z]{3,}$/ig;
+                return regex.test(val);
+            },
+            emailValidator(val){
+                const  regex=  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ig;
+                return regex.test(val);
+            },
+            msgValidator(val) {
+                const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9]{3,}$/ig;
+                return regex.test(val);
+            },
+            ...mapMutations({
+                'setName': 'emailStore/setName',
+                'setEmail': 'emailStore/setEmail',
+                'setMsg': 'emailStore/setMsg',
+            }),
+            ...mapActions({
+                'sendEmail': 'emailStore/sendEmail'
+            }),
             demoSectionAnimation(){
                 setTimeout(() => {
                 this.demoSectionWelcome = 1;
@@ -243,8 +267,9 @@
                 gPage.addEventListener('scroll',()=>{
                     this.gPageScroll = gPage.scrollTop;
                 });
-
-            },
+            },setMsgToPage(msg,time=null){
+                this.$refs.appMsg.setMsg(msg,time);
+            }
         },watch: {
             gPageScroll(val){
                 if(val > 2 * this.part && val < 4 * this.part){
@@ -257,6 +282,10 @@
                     this.serviceSectionAnimation();
                 }
             },
+        },provide(){
+            return {
+                setMsg: this.setMsgToPage,
+            };
         }
     }
 </script>
