@@ -10,5 +10,7 @@ export default {
     },
     getErr(state){
         return state.err;
-    },
+    },getLoader(state){
+        return state.loader;
+    }
 };

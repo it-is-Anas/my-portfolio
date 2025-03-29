@@ -13,5 +13,13 @@ export default {
         setTimeout(() => {
             state.err = '';
         }, 2000);
-    },
+    },openLoader(state){
+        state.loader = true;
+    },closeLoader(state){
+        state.loader = !true;
+    },reset(state){
+        state.name = '';
+        state.email = '';
+        state.msg = '';
+    }
 };

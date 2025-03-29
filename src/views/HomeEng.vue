@@ -189,7 +189,8 @@
                 'name': 'emailStore/getName',
                 'email': 'emailStore/getEmail',
                 'msg': 'emailStore/getMsg',
-                'emailStoreErr': 'emailStore/getErr'
+                'emailStoreErr': 'emailStore/getErr',
+                'emailStoreLoader': 'emailStore/getLoader',
             })
         },data(){
             return {
@@ -221,7 +222,7 @@
                 return regex.test(val);
             },
             msgValidator(val) {
-                const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9]{3,}$/ig;
+                const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9 ]{3,}$/ig;
                 return regex.test(val);
             },
             ...mapMutations({
@@ -286,6 +287,12 @@
             emailStoreErr(val){
                 if(val){
                     this.setMsgToPage(val,5000);
+                }
+            },emailStoreLoader(val){
+                if(val){
+                    this.$refs.appLoader.open();
+                }else{
+                    this.$refs.appLoader.close();
                 }
             }
         },provide(){
