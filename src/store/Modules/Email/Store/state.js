@@ -5,5 +5,6 @@ export default function (){
         msg: '',
         err: '',
         loader: false,
+        reset: false,
     };
 };

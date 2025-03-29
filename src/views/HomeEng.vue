@@ -135,9 +135,9 @@
                 </div>
                 <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2">
                     <div class="contact-me-contoller_send-box">
-                        <InputFiled :label="'Your name : '" :defaultValue="name" :placeholder="'Jhon'" :validator="nameValidator" :errMsg="'Name has to be at least 3 char at least can\'t have numbers'" :update="setName" />
-                        <InputFiled :label="'Your email :'" :defaultValue="email" :placeholder="'Jhon@example.com'" :validator="emailValidator" :errMsg="'Email is not valied'" :update="setEmail" />
-                        <TextAreaFiled :label="'Message :'"  placeholder="Message from Jhon" :validator="msgValidator" :errMsg="'msg have to be atleast 3 chars'" :defaultValue="msg"  :update="setMsg"  /> 
+                        <InputFiled ref="nameFiled" :label="'Your name : '" :defaultValue="name" :placeholder="'Jhon'" :validator="nameValidator" :errMsg="'Name has to be at least 3 char at least can\'t have numbers'" :update="setName" />
+                        <InputFiled ref="emailFiled" :label="'Your email :'" :defaultValue="email" :placeholder="'Jhon@example.com'" :validator="emailValidator" :errMsg="'Email is not valied'" :update="setEmail" />
+                        <TextAreaFiled ref="msgFiled" :label="'Message :'"  placeholder="Message from Jhon" :validator="msgValidator" :errMsg="'msg have to be atleast 3 chars'" :defaultValue="msg"  :update="setMsg"  /> 
                         <GButton :label="'Send'" @click="sendEmail" />
                     </div>
                     <SocialMediaBar />
@@ -191,6 +191,7 @@
                 'msg': 'emailStore/getMsg',
                 'emailStoreErr': 'emailStore/getErr',
                 'emailStoreLoader': 'emailStore/getLoader',
+                'getReset': 'emailStore/getReset',
             })
         },data(){
             return {
@@ -214,7 +215,7 @@
             this.demoSectionAnimation();
         },methods:{
             nameValidator(val){
-                const  regex=  /^(?!.*\d)[a-zA-Z]{3,}$/ig;
+                const  regex=  /^(?!.*\d)[a-zA-Z ]{3,}$/ig;
                 return regex.test(val);
             },
             emailValidator(val){
@@ -293,6 +294,14 @@
                     this.$refs.appLoader.open();
                 }else{
                     this.$refs.appLoader.close();
+                }
+            },getReset(val){
+                console.log(val);
+                if(val){
+                    this.$refs.nameFiled.reset();
+                    this.$refs.emailFiled.reset();
+                    this.$refs.msgFiled.reset();
+                    val = false;
                 }
             }
         },provide(){

@@ -18,8 +18,6 @@ export default {
     },closeLoader(state){
         state.loader = !true;
     },reset(state){
-        state.name = '';
-        state.email = '';
-        state.msg = '';
+        state.reset = true;
     }
 };

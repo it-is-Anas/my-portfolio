@@ -12,5 +12,7 @@ export default {
         return state.err;
     },getLoader(state){
         return state.loader;
+    },getReset(state){
+        return state.reset;
     }
 };

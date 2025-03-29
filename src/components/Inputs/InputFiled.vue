@@ -58,7 +58,8 @@
                 }
             },reset(){
                 this.ok = 0;
-                this.err = 1;
+                this.err = 0;
+                this.value = '';
             }
         },inject: ['setMsg']
     }
