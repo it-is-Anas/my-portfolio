@@ -215,7 +215,7 @@
             this.demoSectionAnimation();
         },methods:{
             nameValidator(val){
-                const  regex=  /^(?!.*\d)[a-zA-Z ]{3,}$/ig;
+                const  regex = /^(?!.*\d)[a-zA-Z\u0600-\u06FF ]{3,}$/ig;
                 return regex.test(val);
             },
             emailValidator(val){
@@ -223,7 +223,7 @@
                 return regex.test(val);
             },
             msgValidator(val) {
-                const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9 ]{3,}$/ig;
+                const regex = /^(?=.*[a-zA-Z\u0600-\u06FF])[a-zA-Z0-9\u0600-\u06FF ]{3,}$/ig;
                 return regex.test(val);
             },
             ...mapMutations({

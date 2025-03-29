@@ -39,6 +39,11 @@ export default function (){
                     label: 'javascript',
                 },
                 {
+                    id: 4,
+                    img: 'ts.png',
+                    label: 'TypeScript',
+                },
+                {
                     id: 5,
                     img: 'node.png',
                     label: 'node js',

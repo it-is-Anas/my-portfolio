@@ -135,19 +135,19 @@
                 </div>
                 <div class="g3-section-controller_row g3-section-controller_row-2 contact-me-controller_row-2">
                     <div class="contact-me-contoller_send-box">
-                        <InputFiled :label="'الاسم : : '" :placeholder="'حسن'" />
-                        <InputFiled :label="'بريدك الإلكتروني :'" :placeholder="'Jhon@example.com'"  />
-                        <TextAreaFiled :label="'رسالتك :'" placeholder="مرحبا أنا حسن"  /> 
-                        <GButton class="arabic" :label="'إرسال'"  />
+                        <InputFiled  ref="nameFiled" :label="'الاسم : '" :placeholder="'حسن'"  :defaultValue="name" :validator="nameValidator" :errMsg="'الاسم يجب أن يكون على الأقل 3 أحرف و بدون أرقام'" :update="setName" />
+                        <InputFiled ref="emailFiled" :label="'بريدك الإلكتروني :'" :placeholder="'Jhon@example.com'" :defaultValue="email" :validator="emailValidator" :errMsg="'البريد الإلكتروني غير صحيح'" :update="setEmail"  />
+                        <TextAreaFiled ref="msgFiled" :label="'رسالتك :'" placeholder="مرحبا أنا حسن"   :validator="msgValidator" :errMsg="'الرسالة يجب أن تكون على الأقل 3 أحرف'" :defaultValue="msg"  :update="setMsg"   /> 
+                        <GButton class="arabic" :label="'إرسال'"  @click="sendEmail"  />
                     </div>
                     <SocialMediaBar />
                 </div>
             </template>
         </GSection>
         <eng-footer />
-        <app-msg ref="appMsg" />
+        <AppMsg ref="appMsg"  />
     </div>
-    <app-loader ref="appLoader" />
+    <AppLoader ref="appLoader" />
 </template>
 
 <script>
@@ -161,7 +161,7 @@
     import InputFiled from '@/components/Inputs/InputFiled.vue';
     import TextAreaFiled from '@/components/Inputs/TextAreaFiled.vue';
     import EngFooter from '@/components/Footers/EngFooter.vue';    
-    import { mapGetters } from 'vuex';
+    import { mapActions, mapGetters, mapMutations } from 'vuex';
     import SocialMediaBar from '@/components/SocialMediaBar/SocialMediaBar.vue';
     export default{
         components:{
@@ -184,6 +184,13 @@
                 'getProjects': 'arabicStore/getProjects',
                 'getServices': 'arabicStore/getServices',
                 'cvUrl': 'glubalStore/getCvUrl',
+                // form 
+                'name': 'emailStore/getName',
+                'email': 'emailStore/getEmail',
+                'msg': 'emailStore/getMsg',
+                'emailStoreErr': 'emailStore/getErr',
+                'emailStoreLoader': 'emailStore/getLoader',
+                'getReset': 'emailStore/getReset',
             })
         },data(){
             return {
@@ -206,6 +213,26 @@
             this.trackScroll();
             this.demoSectionAnimation();
         },methods:{
+            nameValidator(val){
+                const  regex = /^(?!.*\d)[a-zA-Z\u0600-\u06FF ]{3,}$/ig;
+                return regex.test(val);
+            },
+            emailValidator(val){
+                const  regex=  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ig;
+                return regex.test(val);
+            },
+            msgValidator(val) {
+                const regex = /^(?=.*[a-zA-Z\u0600-\u06FF])[a-zA-Z0-9\u0600-\u06FF ]{3,}$/ig;
+                return regex.test(val);
+            },
+            ...mapMutations({
+                'setName': 'emailStore/setName',
+                'setEmail': 'emailStore/setEmail',
+                'setMsg': 'emailStore/setMsg',
+            }),
+            ...mapActions({
+                'sendEmail': 'emailStore/sendEmail'
+            }),
             demoSectionAnimation(){
                 setTimeout(() => {
                 this.demoSectionWelcome = 1;
@@ -243,7 +270,9 @@
                     this.gPageScroll = gPage.scrollTop;
                 });
 
-            },
+            },setMsgToPage(msg,time=null){
+                this.$refs.appMsg.setMsg(msg,time);
+            }
         },watch: {
             gPageScroll(val){
                 if(val > 2 * this.part && val < 4 * this.part){
@@ -255,7 +284,30 @@
                 }else if(val > 8 * this.part && val < 10 * this.part){
                     this.serviceSectionAnimation();
                 }
-            },
+            },emailStoreErr(val){
+                if(val){
+                    this.setMsgToPage(val,5000);
+                }
+            },emailStoreLoader(val){
+                if(val){
+                    this.$refs.appLoader.open();
+                }else{
+                    this.$refs.appLoader.close();
+                }
+            },getReset(val){
+                console.log(val);
+                if(val){
+                    this.$refs.nameFiled.reset();
+                    this.$refs.emailFiled.reset();
+                    this.$refs.msgFiled.reset();
+                    val = false;
+                }
+            }
+        },
+        provide(){
+            return {
+                setMsg: this.setMsgToPage,
+            };
         }
     }
 </script>
