@@ -1,7 +1,7 @@
 <template>
     <GHeader class="eng-header ara-header"  :controllerClasses="['g-header_controller']" >
         <template #default>
-            <HeaderLogo :label="'أنس'" />
+            <HeaderLogo :label="'أنس'" :to="'/lan-ara'" />
             <ul class="g-header-controller_nav-bar " >
                 <a class="g-header-nav-bar_btn" href="#demo" >لمحة</a>
                 <a class="g-header-nav-bar_btn" href="#aboutme" >معلومات عني</a>

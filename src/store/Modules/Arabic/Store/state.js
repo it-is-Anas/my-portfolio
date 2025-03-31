@@ -30,7 +30,7 @@ export default function (){
                 },
                 {
                     id: 3,
-                    img: 'cpp.png',
+                    img: 'cpp.png', 
                     label: 'c++',
                 },
                 {
@@ -42,6 +42,11 @@ export default function (){
                     id: 4,
                     img: 'ts.png',
                     label: 'TypeScript',
+                },
+                {
+                    id: 4,
+                    img: 'github.png',
+                    label: 'Git Hub',
                 },
                 {
                     id: 5,
@@ -64,7 +69,7 @@ export default function (){
                 {
                     id: 0,
                     label: '(Front end) معرض أعمالي ',
-                    tech: 'Tech Stack: Vue.js, Express.js, MySQL',
+                    tech: 'Tech Stack: Vue.js and Adobe XD ',
                     imgName: 'Porto.png',
                     desc: `ملف أعمال شخصي يُبرز خبرتي في تصميم واجهات المستخدم وتجربة المستخدم ومهاراتي في التطوير. يُبرز المشروع واجهات المستخدم التفاعلية، والتخطيطات الأنيقة، وهيكلية المعلومات المنظمة لتقديم تجربة مستخدم تفاعلية.`,
                     link: 'https://github.com/it-is-Anas',
@@ -72,7 +77,7 @@ export default function (){
                 { 
                     id: 1,
                     label: '(Full Stack) شوبي',
-                    tech: 'Tech Stack: Vue.js and Adobe XD',
+                    tech: 'Tech Stack: Vue.js, Express.js, MySQL',
                     imgName: 'Shopy.png',
                     desc: 'شوبي منصة تجارة إلكترونية متكاملة تتيح للمستخدمين التسجيل وتسجيل الدخول وتصفح المنتجات وإدارة مشترياتهم. تتضمن تصفية متقدمة، ونظامًا للمفضلة وسلة التسوق، وتتبع الطلبات، وصفحة ملف تعريف المستخدم لإدارة قوائمهم الشخصية والمبيعات.'
                     ,

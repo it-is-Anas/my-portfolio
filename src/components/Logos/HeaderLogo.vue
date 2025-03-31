@@ -1,7 +1,10 @@
 <template>
-    <p class="header-logo" >
+    <!-- <p class="header-logo" >
         {{ label }}
-    </p>
+    </p> -->
+    <router-link class="header-logo" :to="to" >
+        {{ label }}
+    </router-link>
 </template>
 <script>
 export default {
@@ -9,6 +12,9 @@ export default {
         label:{
             default: 'Label',
             type: String,
+        },to:{
+            default: '/',
+            type: String
         }
     }
 }

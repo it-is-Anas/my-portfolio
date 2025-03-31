@@ -55,6 +55,37 @@ body{
 }
 
 
+.g-controller_down-btn{
+    /* background-color: red; */
+    height: 3em;
+    position: fixed;
+    bottom: .5em;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* z-index: -100; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    padding: .4em;
+}
+
+.g-down-btn{
+    position: relative;
+    background-color: var(--dark-green);
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    width: 1.6em;
+    height: 1.6em;
+    display: grid;
+    place-content: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 1000;
+}
 
 
 @media (min-width: 1000px) {

@@ -29,4 +29,8 @@
     .demo-section-text-col_text-btn{
         margin-right:  auto;
     }
+
+    .arabic .demo-section-text-col_text-btn{
+        margin-left: auto;
+    }
 }

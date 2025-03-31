@@ -6,4 +6,5 @@
     font-weight: bold;
     letter-spacing: .01em;
     cursor: pointer;
+    color: var(--white);
 }

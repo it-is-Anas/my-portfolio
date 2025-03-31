@@ -29,7 +29,7 @@ export default {
             context.commit('closeLoader');
             
             if (request.ok) {
-                context.commit('reset');
+                context.commit('reset'); 
                 context.commit('setErr',' Email sent successfully');
             } else {
                 context.commit('setErr',' Error sending email');

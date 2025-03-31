@@ -1,5 +1,5 @@
 <template> 
-    <div class="g-page arabic" >
+    <div class="g-page arabic" ref="page" >
         <AraHeader />
         <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller','']" >
             <template #default > 
@@ -144,6 +144,11 @@
                 </div>
             </template>
         </GSection>
+        <transition name="fade" >
+            <div  v-if="upBtn" class="g-controller g-controller_down-btn"  >
+                    <i class="fa fa-arrow-right g-down-btn" @click="upBtnClickHandler" ></i>
+                </div>
+        </transition>
         <eng-footer />
         <AppMsg ref="appMsg"  />
     </div>
@@ -208,6 +213,7 @@
                 gPageMaxScroll: 0,
                 part: 0,
                 time: 1000,
+                upBtn: 0,
             };
         },mounted(){
             this.trackScroll();
@@ -272,9 +278,19 @@
 
             },setMsgToPage(msg,time=null){
                 this.$refs.appMsg.setMsg(msg,time);
+            },upBtnClickHandler(){
+                this.$refs.page.scrollTop = 0;
             }
         },watch: {
             gPageScroll(val){
+                if(val === 0){
+                    this.upBtn = 0;
+                }
+                else if(val){
+                    this.upBtn = 1;
+                }
+
+
                 if(val > 2 * this.part && val < 4 * this.part){
                     this.aboutMeSectionAnimation();
                 }else if(val > 4 * this.part && val < 6 * this.part){
@@ -295,7 +311,6 @@
                     this.$refs.appLoader.close();
                 }
             },getReset(val){
-                console.log(val);
                 if(val){
                     this.$refs.nameFiled.reset();
                     this.$refs.emailFiled.reset();

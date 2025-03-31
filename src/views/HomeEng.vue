@@ -1,5 +1,5 @@
 <template> 
-    <div class="g-page" >
+    <div class="g-page" ref="page" >
         <EnglishHeader />
         <GSection :withHeader="true" id="demo" :controllerCls="['demo-section_controller']" >
             <template #default >
@@ -146,6 +146,11 @@
         </GSection>
         <eng-footer />
         <AppMsg ref="appMsg"  />
+        <transition name="fade" >
+            <div  v-if="upBtn" class="g-controller g-controller_down-btn"  >
+                    <i class="fa fa-arrow-right g-down-btn" @click="upBtnClickHandler" ></i>
+                </div>
+        </transition>
     </div>
     <AppLoader ref="appLoader" />
 </template>
@@ -209,6 +214,7 @@
                 gPageMaxScroll: 0,
                 part: 0,
                 time: 1000,
+                upBtn: 0,
             };
         },mounted(){
             this.trackScroll();
@@ -272,9 +278,19 @@
                 });
             },setMsgToPage(msg,time=null){
                 this.$refs.appMsg.setMsg(msg,time);
+            },upBtnClickHandler(){
+                this.$refs.page.scrollTop = 0;
             }
         },watch: {
             gPageScroll(val){
+                if(val === 0){
+                    this.upBtn = 0;
+                }
+                else if(val){
+                    this.upBtn = 1;
+                }
+
+
                 if(val > 2 * this.part && val < 4 * this.part){
                     this.aboutMeSectionAnimation();
                 }else if(val > 4 * this.part && val < 6 * this.part){
@@ -296,14 +312,13 @@
                     this.$refs.appLoader.close();
                 }
             },getReset(val){
-                console.log(val);
                 if(val){
                     this.$refs.nameFiled.reset();
                     this.$refs.emailFiled.reset();
                     this.$refs.msgFiled.reset();
                     val = false;
                 }
-            }
+            } 
         },provide(){
             return {
                 setMsg: this.setMsgToPage,
