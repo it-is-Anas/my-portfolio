@@ -3,7 +3,7 @@
     <a v-if="urlToDownload" download="Anas Al Hourani" class="g-button"  :href="urlToDownload">
         {{ label }}
     </a>
-    <a v-else-if="link"  class="g-button" :href="link">
+    <a v-else-if="link" target="new window"  class="g-button" :href="link">
             {{ label }}
     </a>
     <button v-else class="g-button" >

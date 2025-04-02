@@ -1,79 +1,42 @@
 .g-project-card{
+    width: 16em;
+    height: 23em;
+    border-radius: 7px;
     background: var(--light-gray);
-    width: 15em;
-    min-height: 15em;
-    width: 13em;
-    min-height: 13em;
-    border-radius: 0.9em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    padding: .4em;
-    margin: .4em ;
-    height: 16em;
-    position: relative;
-    transition: 1s .05s all ease-in-out;
-
-
+    display: grid;
+    grid-template-rows: 10em 2em 8em calc(100% - 20em);
+    margin: .5em;
 }
-
+.g-project-card > *{
+    padding: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    margin: 0 auto;
+}
 .g-project-card_img{
-    width: 100%;
-    height: 8em;
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit
+    margin: 0 auto;
+    border-radius: .7em;
+    object-fit: fill;
 }
-
 .g-project-card_label{
-    font-size: 1.4em;
-    font-weight: 700;
-    padding: .3em;
-    /* font-size: 1.2em; */
-    font-size: 1em;
+    color: var(--dark-green);
+    font-size: 1.2em;
+    font-weight: bold;
 }
-
-.g-project-card_tech{
-    font-size: 1em;
-    font-size: .7em;
-    font-weight: 400;
-    padding: .3em;
-}
-
 .g-project-card_desc{
-    width: 100%;
-    height: 100%;
-    background: var(--light-green);
-    opacity: 0;
-    border-radius: inherit;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex
-    ;
-    align-items: center;
-    justify-content: center;
-    padding: .4em;
-    font-size: 1em;
-    transition: 1s .05s all ease-in-out;
-    cursor: pointer;
-    font-weight: 600;
-    line-height: 1.3;
-    z-index: -1;
+    font-size: .8em;
+    font-weight: 400;
+    opacity: .8;
 }
 
-.g-project-card:hover{
-    transform: scale(1.05);
+.g-project-card_btn.git-btn{
+    background-color: var(--black);
 }
-.g-project-card:hover .g-project-card_desc{
-    opacity: 1;
-    z-index: 100;
+.g-project-card_btn.proj-btn{
+    width: 90%;
+}
+.g-project-card_btn-link{
+    background-color: var(--light-green);
+
 }
 
-@media (max-width: 767px) {
-    .g-project-card{
-        margin: 0.4em 20%;
-    }
-}

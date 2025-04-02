@@ -11,6 +11,8 @@
     margin: 1em 0;
     font-size: 1em;
     cursor: pointer;
+    display: grid;
+    place-content: center;
 }
 
 

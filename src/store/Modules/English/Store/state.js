@@ -71,19 +71,17 @@ export default function (){
                 {
                     id: 0,
                     label: 'Portofolio (Front end)',
-                    tech: 'Tech Stack: Vue.js and Adobe XD  ',
                     imgName: 'Porto.png',
                     desc: `A personal portfolio showcasing my UI/UX design expertise and development skills. The project highlights interactive user interfaces, clean layouts, and structured information architecture to deliver an engaging user experience.`,
-                    link: 'https://github.com/it-is-Anas',
+                    // link: 'https://github.com/it-is-Anas',
                 },
                 { 
                     id: 1,
                     label: 'Shopy (Full Stack)',
-                    tech: 'Tech Stack: Vue.js, Express.js, MySQL',
+                    link: 'https://github.com/it-is-Anas',
                     imgName: 'Shopy.png',
                     desc: 'SHOPY is a full-stack e-commerce platform that allows users to register, log in, browse products, and manage their purchases. It includes advanced filtering, a favorites & cart system, order tracking, and a user profile page for managing personal listings and sales'
                     ,
-                    link: 'https://github.com/it-is-Anas',
                 },
             ],
         },ServiceSection: {
