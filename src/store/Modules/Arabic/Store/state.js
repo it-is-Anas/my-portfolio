@@ -68,20 +68,18 @@ export default function (){
             projects: [
                 {
                     id: 0,
-                    label: '(Front end) معرض أعمالي ',
-                    tech: 'Tech Stack: Vue.js and Adobe XD ',
+                    label: 'Portofolio (Front end)',
                     imgName: 'Porto.png',
-                    desc: `ملف أعمال شخصي يُبرز خبرتي في تصميم واجهات المستخدم وتجربة المستخدم ومهاراتي في التطوير. يُبرز المشروع واجهات المستخدم التفاعلية، والتخطيطات الأنيقة، وهيكلية المعلومات المنظمة لتقديم تجربة مستخدم تفاعلية.`,
-                    link: 'https://github.com/it-is-Anas',
+                    desc: `A personal portfolio showcasing my UI/UX design expertise and development skills. The project highlights interactive user interfaces, clean layouts, and structured information architecture to deliver an engaging user experience.`,
+                    // link: 'https://github.com/it-is-Anas',
                 },
                 { 
                     id: 1,
-                    label: '(Full Stack) شوبي',
-                    tech: 'Tech Stack: Vue.js, Express.js, MySQL',
-                    imgName: 'Shopy.png',
-                    desc: 'شوبي منصة تجارة إلكترونية متكاملة تتيح للمستخدمين التسجيل وتسجيل الدخول وتصفح المنتجات وإدارة مشترياتهم. تتضمن تصفية متقدمة، ونظامًا للمفضلة وسلة التسوق، وتتبع الطلبات، وصفحة ملف تعريف المستخدم لإدارة قوائمهم الشخصية والمبيعات.'
-                    ,
+                    label: 'Shopy (Full Stack)',
                     link: 'https://github.com/it-is-Anas',
+                    imgName: 'Shopy.png',
+                    desc: 'SHOPY is a full-stack e-commerce platform that allows users to register, log in, browse products, and manage their purchases. It includes advanced filtering, a favorites & cart system, order tracking, and a user profile page for managing personal listings and sales'
+                    ,
                 },
             ],
         },ServiceSection: {
