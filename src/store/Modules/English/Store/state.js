@@ -11,7 +11,6 @@ export default function (){
         aboutMeSection: {
             text: `As a dedicated Full-Stack Developer, I have experience in HTML, CSS, JavaScript, Java, C++, SQL, MongoDB, OOP, Data Structures, and UI/UX design using Adobe XD. I enjoy transforming ideas into interactive and functional web applications, ensuring intuitive user experiences and scalable backend architectures. My development approach emphasizes clean code, performance optimization, and usability.
                     With a strong foundation in both frontend and backend technologies, I have built projects that integrate modern UI/UX principles with robust backend solutions. I strive to create applications that are efficient, responsive, and user-centric.`,
-            cvUrl: 'https://drive.google.com/uc?export=download&id=1nQhf896vY1J5TmS1UejTXVmVHFJP68iq',
         },
         skillsSection:{
             skills:[
