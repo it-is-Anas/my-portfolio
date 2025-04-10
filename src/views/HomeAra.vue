@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="demo-section_col demo-section_picture-col">
-                    <!-- <span  class="demo-section-picture-col_before-circle"></span> -->
+                    <span  class="demo-section-picture-col_before-circle"></span>
                     <img src="../assets/pic1.png" alt="" class="demo-section-picture-col_picture" loading="lazy" >
                 </div>
             </template>
@@ -61,7 +61,6 @@
                         <GButton :urlToDownload="cvUrl" :label="'تحميل السيرة الذاتية'" class="demo-section-text-col_text-btn" />
                     </div>
                     <div class="g3-section-controller-row-2_col g3-section-controller-row-2_col-2 about-me-section-controller-row-2_col-2">
-                        <span class="demo-section-picture-col_before-circle"></span>
                         <img src="../assets/pic2.png" alt="" class="demo-section-picture-col_picture about-me-section-controller-row-2-col-2_picture" loading="lazy" >
                     </div>
                 </div>
