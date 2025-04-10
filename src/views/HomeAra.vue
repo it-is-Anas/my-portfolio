@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="demo-section_col demo-section_picture-col">
-                    <span  class="demo-section-picture-col_before-circle"></span>
+                    <!-- <span  class="demo-section-picture-col_before-circle"></span> -->
                     <img src="../assets/pic1.png" alt="" class="demo-section-picture-col_picture" loading="lazy" >
                 </div>
             </template>
